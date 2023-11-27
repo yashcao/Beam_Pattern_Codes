@@ -66,7 +66,15 @@ disp(['estimated phi:', num2str(est_phi)]);
 disp(['estimated theta:', num2str(est_theta)]);
 
 figure(1);
-bar3(received_seq); % 'detached'
+
+b = bar3(received_seq); % 'detached'
+for k = 1:length(b)
+    zdata = b(k).ZData;
+    b(k).CData = zdata;
+    b(k).FaceColor = 'interp';
+end
+colorbar;
+
 xlim([0, Ny+1]);
 ylim([0, Nx+1]);
 xlabel('N_y');
