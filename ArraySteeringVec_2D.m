@@ -71,7 +71,3 @@ bar3(received_seq); % 'detached'
 
 
 
-
-
-figure(1);
-bar3(received_seq); % 'detached'
