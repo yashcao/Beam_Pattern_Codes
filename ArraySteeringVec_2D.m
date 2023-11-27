@@ -58,7 +58,18 @@ received_seq = abs(Fx*Array*Fy);
 % [ -(N-1)/2N,  (N-1)/2N ]
 dft_phi = gx(I_row);
 est_phi = acosd(dft_phi);
-disp(['estimated \phi :', num2str(est_phi)]);
+dft_theta = gy(I_col)/sind(est_phi);
+est_theta = asind(dft_theta);
+
+
+disp(['estimated phi:', num2str(est_phi)]);
+disp(['estimated theta:', num2str(est_theta)]);
+
+figure(1);
+bar3(received_seq); % 'detached'
+
+
+
 
 
 
