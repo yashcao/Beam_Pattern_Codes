@@ -2,11 +2,11 @@
 clear; clc;
 
 %% Antenna paras
-Nx = 8;
+Nx = 16;
 Ny = 8;
 N = Nx * Ny;
-theta = 40;   % 方向角
-phi = 130;     % 俯仰角
+theta = 50;   % 方向角
+phi = 60;     % 俯仰角
 
 nx = 0:Nx-1;
 ny = 0:Ny-1;
@@ -26,7 +26,7 @@ end
 
 
 %% 2D DFT matrix/codebook for UPA
-DFT_H = zeros(N, N);
+% DFT_H = zeros(N, N);
 % for k = 0 : N-1
 %     v = floor(k / Nx);
 %     u = k - v * Nx;
@@ -67,6 +67,10 @@ disp(['estimated theta:', num2str(est_theta)]);
 
 figure(1);
 bar3(received_seq); % 'detached'
+xlim([0, Ny+1]);
+ylim([0, Nx+1]);
+xlabel('N_y');
+ylabel('N_x');
 
 
 
